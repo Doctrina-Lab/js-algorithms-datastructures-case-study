@@ -1,0 +1,14 @@
+{
+  "name": "learn-algorithms-with-js",
+  "version": "1.0.0",
+  "description": "Learn algorithms and data structures with JavaScript",
+  "scripts": {
+    "test": "jest",
+    "add-up-to": "node add-up-to.js"
+  },
+  "author": "Vova Myroniuk",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
