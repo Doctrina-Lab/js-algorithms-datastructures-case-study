@@ -4,7 +4,8 @@
   "description": "Learn algorithms and data structures with JavaScript",
   "scripts": {
     "test": "jest",
-    "add-up-to": "node add-up-to.js"
+    "add-up-to": "node add-up-to.js",
+    "same": "node same.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
