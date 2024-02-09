@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "add-up-to": "node add-up-to.js",
-    "same": "node same.js"
+    "same": "node same.js",
+    "valid-anagram": "node valid-anagram.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
