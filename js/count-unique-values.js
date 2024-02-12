@@ -13,17 +13,16 @@ function countUniqueValues(arr) {
         return 0
     }
 
-    let leading = 0
-    let trailing = leading + 1
-    let count = 1
-    for (; trailing < arr.length; ++trailing) {
-        if (arr[leading] !== arr[trailing]) {
-            leading = trailing
-            ++count
+    let left = 0
+    let right = left + 1
+    for (; right < arr.length; ++right) {
+        if (arr[left] !== arr[right]) {
+            ++left
+            arr[left] = arr[right]
         }
     }
 
-    return count
+    return left + 1
 }
 
 module.exports = countUniqueValues
