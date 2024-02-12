@@ -14,8 +14,7 @@ function countUniqueValues(arr) {
     }
 
     let left = 0
-    let right = left + 1
-    for (; right < arr.length; ++right) {
+    for (let right = left + 1; right < arr.length; ++right) {
         if (arr[left] !== arr[right]) {
             ++left
             arr[left] = arr[right]
