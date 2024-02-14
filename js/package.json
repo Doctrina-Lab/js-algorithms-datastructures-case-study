@@ -7,7 +7,8 @@
     "add-up-to": "node add-up-to.js",
     "same": "node same.js",
     "valid-anagram": "node valid-anagram.js",
-    "count-unique-values": "node count-unique-values.js"
+    "count-unique-values": "node count-unique-values.js",
+    "max-subarray-sum": "node max-subarray-sum.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
