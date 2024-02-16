@@ -8,7 +8,8 @@
     "same": "node same.js",
     "valid-anagram": "node valid-anagram.js",
     "count-unique-values": "node count-unique-values.js",
-    "max-subarray-sum": "node max-subarray-sum.js"
+    "max-subarray-sum": "node max-subarray-sum.js",
+    "same-frequency": "node same-frequency.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
