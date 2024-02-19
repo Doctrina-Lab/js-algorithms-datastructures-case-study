@@ -4,12 +4,13 @@
   "description": "Learn algorithms and data structures with JavaScript",
   "scripts": {
     "test": "jest",
-    "add-up-to": "node add-up-to.js",
-    "same": "node same.js",
-    "valid-anagram": "node valid-anagram.js",
-    "count-unique-values": "node count-unique-values.js",
-    "max-subarray-sum": "node max-subarray-sum.js",
-    "same-frequency": "node same-frequency.js"
+    "add-up-to": "node problem-solving-patterns/add-up-to.js",
+    "same": "node problem-solving-patterns/same.js",
+    "valid-anagram": "node problem-solving-patterns/valid-anagram.js",
+    "count-unique-values": "node problem-solving-patterns/count-unique-values.js",
+    "max-subarray-sum": "node problem-solving-patterns/max-subarray-sum.js",
+    "same-frequency": "node problem-solving-patterns/same-frequency.js",
+    "are-there-duplicates": "node problem-solving-patterns/are-there-duplicates.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
