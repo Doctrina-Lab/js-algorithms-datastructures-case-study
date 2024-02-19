@@ -34,9 +34,6 @@ function sameFrequency(first, second) {
     }
 
     for (let key in firstFrequencyCounter) {
-        if (!secondFrequencyCounter[key]) {
-            return false
-        }
         if (firstFrequencyCounter[key] !== secondFrequencyCounter[key]) {
             return false
         }
