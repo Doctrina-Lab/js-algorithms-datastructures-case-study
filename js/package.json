@@ -12,7 +12,8 @@
     "same-frequency": "node problem-solving-patterns/same-frequency.js",
     "are-there-duplicates": "node problem-solving-patterns/are-there-duplicates.js",
     "average-pair": "node problem-solving-patterns/average-pair.js",
-    "is-subsequence": "node problem-solving-patterns/is-subsequence.j"
+    "is-subsequence": "node problem-solving-patterns/is-subsequence.js",
+    "min-subarray-len": "node problem-solving-patterns/min-subarray-len.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
