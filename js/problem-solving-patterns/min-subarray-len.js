@@ -17,19 +17,16 @@
 
 // Space Complexity - O(1)
 
-
-// TODO: Lokk back and refactor
 function minSubArrayLen(arr, num) {
     if (arr.length === 0) { return 0 }
 
     let i = 0
     let j = 0
     let sum = 0
-    do {
-        sum += arr[j]
-        j++
-    } while (j < arr.length && sum < num)
-    j -= 1
+    for (let k = 0; k < arr.length && sum < num; k++) {
+        sum += arr[k]
+        j = k
+    }
 
     if (sum < num) return 0
 
