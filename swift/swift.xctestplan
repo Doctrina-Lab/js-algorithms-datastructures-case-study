@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "F3B0F4D8-EA7A-4C43-A73F-E69FA982B57F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:swift.xcodeproj",
+        "identifier" : "2E20E61B2B9338FA004D5C7D",
+        "name" : "tests"
+      }
+    }
+  ],
+  "version" : 1
+}
