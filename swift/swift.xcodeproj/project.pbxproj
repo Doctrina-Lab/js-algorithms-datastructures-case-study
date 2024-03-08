@@ -12,6 +12,7 @@
 		2E20E6272B933918004D5C7D /* SameFrequencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E20E6262B933918004D5C7D /* SameFrequencyTests.swift */; };
 		2EA410B12B98592D0066E79E /* AveragePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA410B02B98592D0066E79E /* AveragePair.swift */; };
 		2EA484872B96FA630080C233 /* AreThereDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA484862B96FA630080C233 /* AreThereDuplicates.swift */; };
+		2ECB16402B999BE100B1D0C0 /* IsSubsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB163F2B999BE100B1D0C0 /* IsSubsequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		2E20E6282B933AC8004D5C7D /* swift.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = swift.xctestplan; sourceTree = "<group>"; };
 		2EA410B02B98592D0066E79E /* AveragePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AveragePair.swift; sourceTree = "<group>"; };
 		2EA484862B96FA630080C233 /* AreThereDuplicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreThereDuplicates.swift; sourceTree = "<group>"; };
+		2ECB163F2B999BE100B1D0C0 /* IsSubsequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSubsequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				2E20E6262B933918004D5C7D /* SameFrequencyTests.swift */,
 				2EA484862B96FA630080C233 /* AreThereDuplicates.swift */,
 				2EA410B02B98592D0066E79E /* AveragePair.swift */,
+				2ECB163F2B999BE100B1D0C0 /* IsSubsequence.swift */,
 			);
 			path = "problem-solving-patterns";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EA410B12B98592D0066E79E /* AveragePair.swift in Sources */,
+				2ECB16402B999BE100B1D0C0 /* IsSubsequence.swift in Sources */,
 				2E20E6272B933918004D5C7D /* SameFrequencyTests.swift in Sources */,
 				2EA484872B96FA630080C233 /* AreThereDuplicates.swift in Sources */,
 			);
