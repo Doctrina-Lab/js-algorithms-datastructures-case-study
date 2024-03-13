@@ -13,6 +13,7 @@
 		2E7A834C2B9C5F8E00CCB043 /* MaxSubarraySum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A834B2B9C5F8E00CCB043 /* MaxSubarraySum.swift */; };
 		2EA410B12B98592D0066E79E /* AveragePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA410B02B98592D0066E79E /* AveragePair.swift */; };
 		2EA484872B96FA630080C233 /* AreThereDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA484862B96FA630080C233 /* AreThereDuplicates.swift */; };
+		2EA62C0B2BA0952D001ECDFC /* MinSubarrayLen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA62C0A2BA0952D001ECDFC /* MinSubarrayLen.swift */; };
 		2ECB16402B999BE100B1D0C0 /* IsSubsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB163F2B999BE100B1D0C0 /* IsSubsequence.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		2E7A834B2B9C5F8E00CCB043 /* MaxSubarraySum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSubarraySum.swift; sourceTree = "<group>"; };
 		2EA410B02B98592D0066E79E /* AveragePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AveragePair.swift; sourceTree = "<group>"; };
 		2EA484862B96FA630080C233 /* AreThereDuplicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreThereDuplicates.swift; sourceTree = "<group>"; };
+		2EA62C0A2BA0952D001ECDFC /* MinSubarrayLen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinSubarrayLen.swift; sourceTree = "<group>"; };
 		2ECB163F2B999BE100B1D0C0 /* IsSubsequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSubsequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				2EA410B02B98592D0066E79E /* AveragePair.swift */,
 				2ECB163F2B999BE100B1D0C0 /* IsSubsequence.swift */,
 				2E7A834B2B9C5F8E00CCB043 /* MaxSubarraySum.swift */,
+				2EA62C0A2BA0952D001ECDFC /* MinSubarrayLen.swift */,
 			);
 			path = "problem-solving-patterns";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				2ECB16402B999BE100B1D0C0 /* IsSubsequence.swift in Sources */,
 				2E20E6272B933918004D5C7D /* SameFrequencyTests.swift in Sources */,
 				2EA484872B96FA630080C233 /* AreThereDuplicates.swift in Sources */,
+				2EA62C0B2BA0952D001ECDFC /* MinSubarrayLen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
