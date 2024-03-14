@@ -37,22 +37,20 @@ final class FindLongestSubstring: XCTestCase {
     // MARK: - Solution
     
     private func findLongestSubstring(in string: String) -> Int {
-        var maxLength = string.isEmpty ? 0 : 1
+        var maxLength = 0
         var startIndex = string.startIndex
         
         while startIndex < string.endIndex {
             var endIndex = string.index(after: startIndex)
-            while endIndex < string.endIndex {
-                if string[startIndex..<endIndex].contains(string[endIndex]) {
-                    break
-                }
+            
+            while endIndex < string.endIndex, !string[startIndex..<endIndex].contains(string[endIndex]) {
                 endIndex = string.index(after: endIndex)
             }
+            
             maxLength = max(maxLength, string.distance(from: startIndex, to: endIndex))
-            guard endIndex < string.endIndex, let lastIndex = string[startIndex..<endIndex].lastIndex(of: string[endIndex]) else {
-                return maxLength
-            }
-            startIndex = string.index(after: lastIndex)
+            
+            guard endIndex < string.endIndex else { return maxLength }
+            startIndex = string.index(after: string[startIndex..<endIndex].lastIndex(of: string[endIndex])!)
         }
         
         return maxLength
