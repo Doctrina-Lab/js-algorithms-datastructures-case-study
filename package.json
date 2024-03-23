@@ -14,7 +14,8 @@
     "average-pair": "node problem-solving-patterns/average-pair.js",
     "is-subsequence": "node problem-solving-patterns/is-subsequence.js",
     "min-subarray-len": "node problem-solving-patterns/min-subarray-len.js",
-    "find-longest-substring": "node problem-solving-patterns/find-longest-substring.js"
+    "find-longest-substring": "node problem-solving-patterns/find-longest-substring.js",
+    "countdown": "node recursion/countdown.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
