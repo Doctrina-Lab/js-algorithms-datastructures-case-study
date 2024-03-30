@@ -17,7 +17,8 @@
     "find-longest-substring": "node problem-solving-patterns/find-longest-substring.js",
     "countdown": "node recursion/countdown.js",
     "sum-range": "node recursion/sum-range.js",
-    "factorialIter": "node recursion/factorial-iter.js"
+    "factorialIter": "node recursion/factorial-iter.js",
+    "factorialRec": "node recursion/factorial-rec.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
