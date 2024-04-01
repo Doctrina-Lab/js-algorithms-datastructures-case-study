@@ -18,7 +18,8 @@
     "countdown": "node recursion/countdown.js",
     "sum-range": "node recursion/sum-range.js",
     "factorialIter": "node recursion/factorial-iter.js",
-    "factorialRec": "node recursion/factorial-rec.js"
+    "factorialRec": "node recursion/factorial-rec.js",
+    "collect-odds": "node recursion/collect-odds.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
