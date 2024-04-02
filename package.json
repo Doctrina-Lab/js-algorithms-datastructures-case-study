@@ -19,7 +19,7 @@
     "sum-range": "node recursion/sum-range.js",
     "factorialIter": "node recursion/factorial-iter.js",
     "factorialRec": "node recursion/factorial-rec.js",
-    "collect-odds": "node recursion/collect-odds.js"
+    "collect-odds-helper-method-rec": "node recursion/collect-odds-helper-method-rec.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
