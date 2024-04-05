@@ -21,7 +21,8 @@
     "factorialRec": "node recursion/factorial-rec.js",
     "collect-odds-helper-method-rec": "node recursion/collect-odds-helper-method-rec.js",
     "collect-odds-pure-rec": "node recursion/collect-pure-rec.js",
-    "power": "node recursion/power.js"
+    "power": "node recursion/power.js",
+    "product-of-array": "node recursion/product-of-array.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
