@@ -23,7 +23,8 @@
     "collect-odds-pure-rec": "node recursion/collect-pure-rec.js",
     "power": "node recursion/power.js",
     "product-of-array": "node recursion/product-of-array.js",
-    "fib": "node recursion/fib.js"
+    "fib": "node recursion/fib.js",
+    "reverse": "node recursion/reverse.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
