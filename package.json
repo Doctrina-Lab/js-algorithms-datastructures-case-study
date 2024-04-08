@@ -24,7 +24,8 @@
     "power": "node recursion/power.js",
     "product-of-array": "node recursion/product-of-array.js",
     "fib": "node recursion/fib.js",
-    "reverse": "node recursion/reverse.js"
+    "reverse": "node recursion/reverse.js",
+    "is-palindrome": "node recursion/is-palindrome.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
