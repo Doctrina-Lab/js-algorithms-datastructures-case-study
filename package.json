@@ -26,7 +26,8 @@
     "fib": "node recursion/fib.js",
     "reverse": "node recursion/reverse.js",
     "is-palindrome": "node recursion/is-palindrome.js",
-    "some-recursive": "node recursion/some-recursive.js"
+    "some-recursive": "node recursion/some-recursive.js",
+    "flatten": "node recursion/flatten.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
