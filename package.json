@@ -27,7 +27,8 @@
     "reverse": "node recursion/reverse.js",
     "is-palindrome": "node recursion/is-palindrome.js",
     "some-recursive": "node recursion/some-recursive.js",
-    "flatten": "node recursion/flatten.js"
+    "flatten": "node recursion/flatten.js",
+    "capitalize-first": "node recursion/capitalize-first.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
