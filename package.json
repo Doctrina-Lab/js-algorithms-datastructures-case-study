@@ -28,7 +28,8 @@
     "is-palindrome": "node recursion/is-palindrome.js",
     "some-recursive": "node recursion/some-recursive.js",
     "flatten": "node recursion/flatten.js",
-    "capitalize-first": "node recursion/capitalize-first.js"
+    "capitalize-first": "node recursion/capitalize-first.js",
+    "nested-even-sum": "node recursion/nested-even-sum.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
