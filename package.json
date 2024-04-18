@@ -29,7 +29,8 @@
     "some-recursive": "node recursion/some-recursive.js",
     "flatten": "node recursion/flatten.js",
     "capitalize-first": "node recursion/capitalize-first.js",
-    "nested-even-sum": "node recursion/nested-even-sum.js"
+    "nested-even-sum": "node recursion/nested-even-sum.js",
+    "capitalize-words": "node recursion/capitalize-words.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
