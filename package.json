@@ -32,7 +32,8 @@
     "nested-even-sum": "node recursion/nested-even-sum.js",
     "capitalize-words": "node recursion/capitalize-words.js",
     "stringify-numbers": "node recursion/stringify-numbers.js",
-    "collect-strings": "node recursion/collect-strings.js"
+    "collect-strings": "node recursion/collect-strings.js",
+    "linear-search": "node searching-algorithms/linear-search.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
