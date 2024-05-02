@@ -33,7 +33,9 @@
     "capitalize-words": "node recursion/capitalize-words.js",
     "stringify-numbers": "node recursion/stringify-numbers.js",
     "collect-strings": "node recursion/collect-strings.js",
-    "linear-search": "node searching-algorithms/linear-search.js"
+    "linear-search": "node searching-algorithms/linear-search.js",
+    "binary-search": "node searching-algorithms/binary-search.js",
+    "naive-string-search": "node searching-algorithms/naive-string-search.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
