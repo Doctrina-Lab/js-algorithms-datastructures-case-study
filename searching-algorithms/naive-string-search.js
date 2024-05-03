@@ -1,15 +1,10 @@
 function naiveStringSearch(string, substring) {
-    let count = 0
+    let count  = 0
 
     for (let i = 0; i < string.length; i++) {
-        let j = 0
-        while (j < substring.length && i < string.length) {
-            if (string[i] !== substring[j]) break
-            if (string[i] === substring[j]) {
-                if (j === substring.length - 1) count++
-                i++
-                j++
-            }
+        for (let j = 0; j < substring.length; j++) {
+            if (substring[j] !== string[i + j]) break
+            if (j === substring.length - 1) count++
         }
     }
 
