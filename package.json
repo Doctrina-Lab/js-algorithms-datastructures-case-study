@@ -37,7 +37,8 @@
     "binary-search": "node searching-algorithms/binary-search.js",
     "naive-string-search": "node searching-algorithms/naive-string-search.js",
     "kmp-string-search": "node searching-algorithms/kmp-string-search.js",
-    "bubble-sort": "node sorting-algorithms/bubble-sort.js"
+    "bubble-sort": "node sorting-algorithms/bubble-sort.js",
+    "selection-sort": "node sorting-algorithms/selection-sort.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
