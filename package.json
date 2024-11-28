@@ -39,7 +39,9 @@
     "kmp-string-search": "node searching-algorithms/kmp-string-search.js",
     "bubble-sort": "node sorting-algorithms/bubble-sort.js",
     "selection-sort": "node sorting-algorithms/selection-sort.js",
-    "insertion-sort": "node sorting-algorithms/insertion-sort.js"
+    "insertion-sort": "node sorting-algorithms/insertion-sort.js",
+    "merge-sort": "node sorting-algorithms/merge-sort.js",
+    "quick-sort": "node sorting-algorithms/quick-sort.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
