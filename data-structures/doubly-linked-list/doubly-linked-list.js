@@ -13,7 +13,18 @@ class DoublyLinkedList {
     this.length = 0
   }
 
-  push(value) {}
+  push(value) {
+    let node = new Node(value)
+    if (!this.head) {
+      this.head = node
+      this.tail = node
+    } else {
+      node.prev = this.tail
+      this.tail.next = node
+      this.tail = node
+    }
+    this.length++
+  }
 
   pop() {}
 
