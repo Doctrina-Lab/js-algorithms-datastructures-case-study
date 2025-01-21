@@ -42,7 +42,20 @@ class DoublyLinkedList {
     return value
   }
 
-  shift() {}
+  shift() {
+    if (!this.head) return undefined
+    let node = this.head
+    this.length--
+    if (this.length === 0) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.head = node.next
+      this.head.prev = null
+      node.next = null
+    }
+    return node
+  }
 
   unshift(value) {}
 

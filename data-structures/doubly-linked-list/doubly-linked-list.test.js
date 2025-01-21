@@ -94,3 +94,67 @@ describe('DoublyLinkedList.pop', () => {
     expect(list.tail.next).toEqual(null)
   })
 })
+
+describe('DoublyLinkedList.shift', () => {
+  it('returns undefined for empty list', () => {
+    let list = new DoublyLinkedList()
+    expect(list.shift()).toEqual(undefined)
+  })
+
+  it('shifts one-item list', () => {
+    let list = new DoublyLinkedList()
+    list.push(3)
+    let head = list.head
+    expect(list.shift()).toEqual(head)
+    expect(list.length).toEqual(0)
+    expect(list.head).toEqual(null)
+    expect(list.tail).toEqual(null)
+  })
+
+  it('shifts larger list', () => {
+    let list = new DoublyLinkedList()
+    list.push(3)
+    list.push(42)
+    list.push(33)
+    list.push(21)
+    let head = list.head
+    expect(list.shift()).toEqual(head)
+    expect(list.length).toEqual(3)
+    expect(list.head.value).toEqual(42)
+    expect(list.head.next.value).toEqual(33)
+    expect(list.head.next.next.value).toEqual(21)
+    expect(list.head.next.next.next).toEqual(null)
+    expect(list.tail.value).toEqual(21)
+    expect(list.tail.prev.value).toEqual(33)
+    expect(list.tail.prev.prev.value).toEqual(42)
+    expect(list.tail.prev.prev.prev).toEqual(null)
+  })
+
+  it('shifts larger list a few times', () => {
+    let list = new DoublyLinkedList()
+    list.push(3)
+    list.push(42)
+    list.push(33)
+    list.push(21)
+    let head = list.head
+    expect(list.shift()).toEqual(head)
+    expect(list.length).toEqual(3)
+    expect(list.head.value).toEqual(42)
+    expect(list.head.next.value).toEqual(33)
+    expect(list.head.next.next.value).toEqual(21)
+    expect(list.head.next.next.next).toEqual(null)
+    expect(list.tail.value).toEqual(21)
+    expect(list.tail.prev.value).toEqual(33)
+    expect(list.tail.prev.prev.value).toEqual(42)
+    expect(list.tail.prev.prev.prev).toEqual(null)
+    head = list.head
+    expect(list.shift()).toEqual(head)
+    expect(list.length).toEqual(2)
+    expect(list.head.value).toEqual(33)
+    expect(list.head.next.value).toEqual(21)
+    expect(list.head.next.next).toEqual(null)
+    expect(list.tail.value).toEqual(21)
+    expect(list.tail.prev.value).toEqual(33)
+    expect(list.tail.prev.prev).toEqual(null)
+  })
+})
