@@ -57,7 +57,20 @@ class DoublyLinkedList {
     return node
   }
 
-  unshift(value) {}
+  unshift(value) {
+    if (!this.head) {
+      this.push(value)
+    } else {
+      let node = new Node(value)
+      node.next = this.head
+      this.head.prev = node
+      this.head = node
+      node = null
+      this.length++
+    }
+
+    return this
+  }
 
   get(index) {}
 
