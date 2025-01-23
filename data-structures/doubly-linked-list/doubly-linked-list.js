@@ -70,7 +70,13 @@ class DoublyLinkedList {
     return this
   }
 
-  get(index) {}
+  get(index) {
+    if (!this.head) return null
+    if (index < 0 || index >= this.length) return null
+    let node = this.head
+    for (let i = 0; i < index; i++) node = node.next
+    return node
+  }
 
   set(index, value) {}
 

@@ -238,3 +238,59 @@ describe('DoublyLinkedList.unshift', () => {
     expect(newList.tail.next).toEqual(null)
   })
 })
+
+describe('SinglyLinkedList.get', () => {
+  it('returns null for empty list', () => {
+    let list = new DoublyLinkedList()
+    expect(list.get(0)).toEqual(null)
+  })
+
+  it('returns null for negative index', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    expect(list.get(-1)).toEqual(null)
+    expect(list.length).toEqual(1)
+  })
+
+  it('returns null for index greater than list length', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    expect(list.get(3)).toEqual(null)
+    expect(list.length).toEqual(1)
+  })
+
+  it('returns first node in one-item list', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    let node = list.get(0)
+    expect(node.value).toEqual(1)
+    expect(list.length).toEqual(1)
+  })
+
+  it('returns node from the middle of larger list', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    list.push(5)
+    list.push(6)
+    let node = list.get(3)
+    expect(node.value).toEqual(4)
+    expect(list.length).toEqual(6)
+  })
+
+  it('returns node from the end of larger list', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    list.push(5)
+    list.push(6)
+    let node = list.get(5)
+    expect(node.value).toEqual(6)
+    expect(list.length).toEqual(6)
+  })
+})
+
