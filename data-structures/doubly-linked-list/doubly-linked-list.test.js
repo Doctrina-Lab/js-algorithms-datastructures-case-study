@@ -239,7 +239,7 @@ describe('DoublyLinkedList.unshift', () => {
   })
 })
 
-describe('SinglyLinkedList.get', () => {
+describe('DoublyLinkedList.get', () => {
   it('returns null for empty list', () => {
     let list = new DoublyLinkedList()
     expect(list.get(0)).toEqual(null)
@@ -294,3 +294,75 @@ describe('SinglyLinkedList.get', () => {
   })
 })
 
+describe('DoublyLinkedList.set', () => {
+  it('returns false for empty list and does not change the list', () => {
+    let list = new DoublyLinkedList()
+    expect(list.set(0, 13)).toEqual(false)
+    expect(list.length).toEqual(0)
+    expect(list.head).toEqual(null)
+    expect(list.tail).toEqual(null)
+  })
+
+  it('returns false on negative index and does not change the list', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    expect(list.set(-1, 13)).toEqual(false)
+    expect(list.length).toEqual(3)
+    expect(list.head.value).toEqual(1)
+    expect(list.tail.value).toEqual(3)
+  })
+
+  it('returns false on index greter than list length and does not change the list', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    expect(list.set(4, 13)).toEqual(false)
+    expect(list.length).toEqual(3)
+    expect(list.head.value).toEqual(1)
+    expect(list.tail.value).toEqual(3)
+  })
+
+  it('returns true when change first item in one-item list', () => {
+    let list = new DoublyLinkedList()
+    list.push(1)
+    expect(list.set(0, 3)).toEqual(true)
+    expect(list.length).toEqual(1)
+    expect(list.head.value).toEqual(3)
+    expect(list.tail.value).toEqual(3)
+  })
+
+   it('returns true when change mid item in longer list', () => {
+     let list = new DoublyLinkedList()
+     list.push(1)
+     list.push(2)
+     list.push(3)
+     list.push(4)
+     list.push(5)
+     list.push(6)
+     list.push(7)
+     expect(list.set(4, 13)).toEqual(true)
+     expect(list.length).toEqual(7)
+     expect(list.head.value).toEqual(1)
+     expect(list.tail.value).toEqual(7)
+     expect(list.get(4).value).toEqual(13)
+  })
+
+   it('returns true when change the last item in longer list', () => {
+     let list = new DoublyLinkedList()
+     list.push(1)
+     list.push(2)
+     list.push(3)
+     list.push(4)
+     list.push(5)
+     list.push(6)
+     list.push(7)
+     expect(list.set(6, 13)).toEqual(true)
+     expect(list.length).toEqual(7)
+     expect(list.head.value).toEqual(1)
+     expect(list.tail.value).toEqual(13)
+     expect(list.get(6).value).toEqual(13)
+  })
+})
