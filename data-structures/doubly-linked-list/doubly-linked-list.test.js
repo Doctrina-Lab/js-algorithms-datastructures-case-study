@@ -366,3 +366,68 @@ describe('DoublyLinkedList.set', () => {
      expect(list.get(6).value).toEqual(13)
   })
 })
+
+describe('DoublyLinkedList.insert', () => {
+  it('returns false when index to insert into is less than zero', () => {
+    let emptyList = new DoublyLinkedList()
+    expect(emptyList.insert(-1, 3)).toEqual(false)
+
+    let nonEmptyList = new DoublyLinkedList()
+    nonEmptyList.push(7)
+    expect(nonEmptyList.insert(-1, 3)).toEqual(false)
+  })
+
+  it('returns false when index to insert into is greater than list length', () => {
+    let emptyList = new DoublyLinkedList()
+    expect(emptyList.insert(10, 3)).toEqual(false)
+
+    let nonEmptyList = new DoublyLinkedList()
+    nonEmptyList.push(7)
+    expect(nonEmptyList.insert(10, 3)).toEqual(false)
+  })
+
+  it('returns true and pushes a new node if index is the same as list length', () => {
+    let emptyList = new DoublyLinkedList()
+    expect(emptyList.insert(0, 3)).toEqual(true)
+    expect(emptyList.length).toEqual(1)
+    expect(emptyList.head.value).toEqual(3)
+    expect(emptyList.tail.value).toEqual(3)
+
+    let nonEmptyList = new DoublyLinkedList()
+    nonEmptyList.push(0)
+    nonEmptyList.push(1)
+    expect(nonEmptyList.insert(2, 3)).toEqual(true)
+    expect(nonEmptyList.length).toEqual(3)
+    expect(nonEmptyList.tail.value).toEqual(3)
+  })
+
+  it('returns true and unshifts a new node if index is 0', () => {
+    let emptyList = new DoublyLinkedList()
+    expect(emptyList.insert(0, 42)).toEqual(true)
+    expect(emptyList.length).toEqual(1)
+    expect(emptyList.head.value).toEqual(42)
+    expect(emptyList.tail.value).toEqual(42)
+
+    let nonEmptyList = new DoublyLinkedList()
+    nonEmptyList.push(0)
+    nonEmptyList.push(1)
+    nonEmptyList.push(2)
+    expect(nonEmptyList.insert(0, 42))
+    expect(nonEmptyList.length).toEqual(4)
+    expect(nonEmptyList.head.value).toEqual(42)
+  })
+
+  it('returns true and inserts a new node in the middle of the list', () => {
+    let list = new DoublyLinkedList()
+    list.push(0)
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    expect(list.insert(2, 42)).toEqual(true)
+    expect(list.length).toEqual(6)
+    expect(list.head.next.value).toEqual(1)
+    expect(list.head.next.next.value).toEqual(42)
+    expect(list.head.next.next.next.value).toEqual(2)
+  })
+})

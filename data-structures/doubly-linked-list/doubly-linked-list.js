@@ -24,6 +24,7 @@ class DoublyLinkedList {
       this.tail = node
     }
     this.length++
+    return this
   }
 
   pop() {
@@ -85,7 +86,19 @@ class DoublyLinkedList {
     return true
   }
 
-  insert(index, value) {}
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false
+    if (index === this.length) return !!this.push(value)
+    if (index === 0) return !!this.unshift(value)
+    let current = this.get(index)
+    let node = new Node(value)
+    node.prev = current.prev
+    node.next = current
+    current.prev = node
+    node.prev.next = node
+    this.length++
+    return true
+  }
 
   remove(index) {}
 
