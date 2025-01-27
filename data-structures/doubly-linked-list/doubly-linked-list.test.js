@@ -431,3 +431,92 @@ describe('DoublyLinkedList.insert', () => {
     expect(list.head.next.next.next.value).toEqual(2)
   })
 })
+
+describe('DoublyLinkedList.remove', () => {
+  it('returns undefined if index is less than zero', () => {
+    let emptyList = new DoublyLinkedList()
+    expect(emptyList.remove(-1)).toEqual(undefined)
+
+    let nonEmptyList = new DoublyLinkedList()
+    nonEmptyList.push(42)
+    expect(nonEmptyList.remove(-1)).toEqual(undefined)
+    expect(nonEmptyList.length).toEqual(1)
+    expect(nonEmptyList.head.value).toEqual(42)
+    expect(nonEmptyList.tail.value).toEqual(42)
+  })
+
+  it('returns undefined if index is greeter than or equal to list length', () => {
+    let emptyList = new DoublyLinkedList()
+    expect(emptyList.remove(10)).toEqual(undefined)
+
+    let nonEmptyList = new DoublyLinkedList()
+    nonEmptyList.push(42)
+    expect(nonEmptyList.remove(10)).toEqual(undefined)
+    expect(nonEmptyList.length).toEqual(1)
+    expect(nonEmptyList.head.value).toEqual(42)
+    expect(nonEmptyList.tail.value).toEqual(42)
+  })
+
+  it('returns undefined for empty list when index is zero', () => {
+    let list = new DoublyLinkedList()
+    expect(list.remove(0)).toEqual(undefined)
+  })
+
+  it('removes first node for non-empty list', () => {
+    let list = new DoublyLinkedList()
+    list.push(0)
+    list.push(1)
+    list.push(2)
+    expect(list.remove(0)).toEqual(0)
+    expect(list.length).toEqual(2)
+    expect(list.head.value).toEqual(1)
+    expect(list.tail.value).toEqual(2)
+  })
+
+  it('removes last node for non-empty list', () => {
+    let list = new DoublyLinkedList()
+    list.push(0)
+    list.push(1)
+    list.push(2)
+    expect(list.remove(2)).toEqual(2)
+    expect(list.length).toEqual(2)
+    expect(list.head.value).toEqual(0)
+    expect(list.tail.value).toEqual(1)
+  })
+
+  it('removes middle node for non-empty list', () => {
+    let list = new DoublyLinkedList()
+    list.push(0)
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    expect(list.remove(2)).toEqual(2)
+    expect(list.length).toEqual(4)
+    expect(list.head.value).toEqual(0)
+    expect(list.tail.value).toEqual(4)
+  })
+
+  it('removes any node for non-empty list', () => {
+    let list = new DoublyLinkedList()
+    list.push(0)
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    expect(list.remove(0)).toEqual(0)
+    expect(list.length).toEqual(4)
+    expect(list.head.value).toEqual(1)
+    expect(list.tail.value).toEqual(4)
+
+    expect(list.remove(1)).toEqual(2)
+    expect(list.length).toEqual(3)
+    expect(list.head.value).toEqual(1)
+    expect(list.tail.value).toEqual(4)
+
+    expect(list.remove(2)).toEqual(4)
+    expect(list.length).toEqual(2)
+    expect(list.head.value).toEqual(1)
+    expect(list.tail.value).toEqual(3)
+  })
+})
