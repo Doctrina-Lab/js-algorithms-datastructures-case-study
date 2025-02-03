@@ -30,8 +30,7 @@ class DoublyLinkedList {
   pop() {
     if (!this.head) return undefined
     let value = this.tail.value
-    this.length--
-    if (this.length === 0) {
+    if (this.length === 1) {
       this.head = null
       this.tail = null
     } else {
@@ -40,6 +39,7 @@ class DoublyLinkedList {
       oldTail.prev = null
       this.tail.next = null
     }
+    this.length--
     return value
   }
 
