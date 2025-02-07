@@ -29,7 +29,7 @@ class DoublyLinkedList {
 
   pop() {
     if (!this.head) return undefined
-    let value = this.tail.value
+    let node = this.tail
     if (this.length === 1) {
       this.head = null
       this.tail = null
@@ -40,7 +40,7 @@ class DoublyLinkedList {
       this.tail.next = null
     }
     this.length--
-    return value
+    return node
   }
 
   shift() {
@@ -105,8 +105,7 @@ class DoublyLinkedList {
 
   remove(index) {
     if (index < 0 || index >= this.length) return undefined
-//    if (!this.head) return undefined
-    if (index === 0) return this.shift().value
+    if (index === 0) return this.shift()
     if (index === this.length - 1) return this.pop()
     let node = this.get(index)
     let prevNode = node.prev
@@ -116,7 +115,7 @@ class DoublyLinkedList {
     node.next = null
     node.prev = null
     this.length--
-    return node.value
+    return node
   }
 
   reverse() {
