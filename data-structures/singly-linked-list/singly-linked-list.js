@@ -40,7 +40,7 @@ class SinglyLinkedList {
       this.head = null
       this.tail = null
     }
-    return current.value
+    return current
   }
 
   shift() {
@@ -92,13 +92,13 @@ class SinglyLinkedList {
 
   remove(index) {
     if (index < 0 || index >= this.length) return undefined
-    if (index === 0) return this.shift().value
+    if (index === 0) return this.shift()
     if (index === this.length - 1) return this.pop()
     let previousNode = this.get(index - 1)
-    let value = previousNode.next.value
+    let node = previousNode.next
     previousNode.next = previousNode.next.next
     this.length--
-    return value
+    return node
   }
 
   reverse() {

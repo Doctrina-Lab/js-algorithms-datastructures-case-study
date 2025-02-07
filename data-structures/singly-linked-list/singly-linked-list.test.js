@@ -41,29 +41,29 @@ describe('SinglyLinkedList.pop', () => {
     expect(list.pop()).toEqual(undefined)
   })
 
-  it('returns single node value and removes it from one-element list', () => {
+  it('returns single node and removes it from one-element list', () => {
     let list = new SinglyLinkedList()
     let value = 42
     list.push(value)
-    expect(list.pop()).toEqual(value)
+    expect(list.pop().value).toEqual(value)
     expect(list.head).toEqual(null)
     expect(list.tail).toEqual(null)
     expect(list.length).toEqual(0)
   })
 
-  it('returns the last node value and removes it from two-elements value', () => {
+  it('returns the last node and removes it from two-elements value', () => {
     let list = new SinglyLinkedList()
     let beforeLast = 3
     let last = 42
     list.push(beforeLast)
     list.push(last)
-    expect(list.pop()).toEqual(last)
+    expect(list.pop().value).toEqual(last)
     expect(list.head.value).toEqual(beforeLast)
     expect(list.tail.value).toEqual(beforeLast)
     expect(list.length).toEqual(1)
   })
 
-  it('returns the last node value and removes it from the larger list', () => {
+  it('returns the last node and removes it from the larger list', () => {
     let list = new SinglyLinkedList()
     let beforeLast = 10
     let last = 42
@@ -72,7 +72,7 @@ describe('SinglyLinkedList.pop', () => {
     list.push(3)
     list.push(beforeLast)
     list.push(last)
-    expect(list.pop()).toEqual(last)
+    expect(list.pop().value).toEqual(last)
     expect(list.length).toEqual(4)
     expect(list.tail.value).toEqual(beforeLast)
     expect(list.tail.next).toEqual(null)
@@ -402,7 +402,7 @@ describe('SinglyLinkedList.remove', () => {
     list.push(0)
     list.push(1)
     list.push(2)
-    expect(list.remove(0)).toEqual(0)
+    expect(list.remove(0).value).toEqual(0)
     expect(list.length).toEqual(2)
     expect(list.head.value).toEqual(1)
     expect(list.tail.value).toEqual(2)
@@ -413,7 +413,7 @@ describe('SinglyLinkedList.remove', () => {
     list.push(0)
     list.push(1)
     list.push(2)
-    expect(list.remove(2)).toEqual(2)
+    expect(list.remove(2).value).toEqual(2)
     expect(list.length).toEqual(2)
     expect(list.head.value).toEqual(0)
     expect(list.tail.value).toEqual(1)
@@ -426,7 +426,7 @@ describe('SinglyLinkedList.remove', () => {
     list.push(2)
     list.push(3)
     list.push(4)
-    expect(list.remove(2)).toEqual(2)
+    expect(list.remove(2).value).toEqual(2)
     expect(list.length).toEqual(4)
     expect(list.head.value).toEqual(0)
     expect(list.tail.value).toEqual(4)
@@ -439,17 +439,17 @@ describe('SinglyLinkedList.remove', () => {
     list.push(2)
     list.push(3)
     list.push(4)
-    expect(list.remove(0)).toEqual(0)
+    expect(list.remove(0).value).toEqual(0)
     expect(list.length).toEqual(4)
     expect(list.head.value).toEqual(1)
     expect(list.tail.value).toEqual(4)
 
-    expect(list.remove(1)).toEqual(2)
+    expect(list.remove(1).value).toEqual(2)
     expect(list.length).toEqual(3)
     expect(list.head.value).toEqual(1)
     expect(list.tail.value).toEqual(4)
 
-    expect(list.remove(2)).toEqual(4)
+    expect(list.remove(2).value).toEqual(4)
     expect(list.length).toEqual(2)
     expect(list.head.value).toEqual(1)
     expect(list.tail.value).toEqual(3)
