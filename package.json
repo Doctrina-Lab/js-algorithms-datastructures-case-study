@@ -43,7 +43,8 @@
     "merge-sort": "node sorting-algorithms/merge-sort.js",
     "quick-sort": "node sorting-algorithms/quick-sort.js",
     "radix-sort": "node sorting-algorithms/radix-sort.js",
-    "singly-linked-list": "node data-structures/singly-linked-list/singly-linked-list.js"
+    "singly-linked-list": "node data-structures/singly-linked-list/singly-linked-list.js",
+    "doubly-linked-list": "node data-structures/doubly-linked-list/doubly-linked-list.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
