@@ -105,7 +105,7 @@ class DoublyLinkedList {
 
   remove(index) {
     if (index < 0 || index >= this.length) return undefined
-    if (!this.head) return undefined
+//    if (!this.head) return undefined
     if (index === 0) return this.shift().value
     if (index === this.length - 1) return this.pop()
     let node = this.get(index)
