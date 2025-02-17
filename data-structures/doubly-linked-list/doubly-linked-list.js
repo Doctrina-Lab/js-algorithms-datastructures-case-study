@@ -2,10 +2,11 @@ class Node {
   constructor(value) {
     this.value = value
     this.next = null
+    this.prev = null
   }
 }
 
-class SinglyLinkedList {
+class DoublyLinkedList {
   constructor() {
     this.head = null
     this.tail = null
@@ -18,6 +19,7 @@ class SinglyLinkedList {
       this.head = node
       this.tail = node
     } else {
+      node.prev = this.tail
       this.tail.next = node
       this.tail = node
     }
@@ -27,54 +29,63 @@ class SinglyLinkedList {
 
   pop() {
     if (!this.head) return undefined
-    let current = this.head
-    let newTail = this.head
-    while (current.next) {
-      newTail = current
-      current = current.next
-    }
-    this.tail = newTail
-    this.tail.next = null
-    this.length--
-    if (this.length === 0) {
+    let node = this.tail
+    if (this.length === 1) {
       this.head = null
       this.tail = null
+    } else {
+      this.tail = this.tail.prev
+      let oldTail = this.tail.next
+      oldTail.prev = null
+      this.tail.next = null
     }
-    return current
+    this.length--
+    return node
   }
 
   shift() {
     if (!this.head) return undefined
-    let oldHead = this.head
-    this.head = this.head.next
-    this.length--
-    if (!this.head) this.tail = null
-    return oldHead 
+    let node = this.head
+    if (this.length === 1) {
+      this.pop()
+    } else {
+      this.head = node.next
+      this.head.prev = null
+      node.next = null
+      this.length--
+    }
+    return node
   }
 
   unshift(value) {
+    if (!this.head) return this.push(value)
+
     let node = new Node(value)
     node.next = this.head
+    this.head.prev = node
     this.head = node
     this.length++
-    if (this.length === 1) this.tail = this.head
+
     return this
   }
-  
+
   get(index) {
-    if (index < 0 || index >= this.length) { return null }
-    if (!this.head) { return null }
-    let currentNode = this.head
-    for (let i = 0; i != index; i++) {
-      currentNode = currentNode.next
+    if (index < 0 || index >= this.length) return null
+    if (index <= this.length / 2) {
+      let node = this.head
+      for (let i = 0; i !== index; i++) node = node.next
+      return node
+    } else {
+      let node = this.tail
+      for (let i = this.length - 1; i !== index; i--) node = node.prev
+      return node
     }
-    return currentNode
   }
 
   set(index, value) {
     let node = this.get(index)
     if (!node) return false
-    node.value =  value
+    node.value = value
     return true
   }
 
@@ -82,10 +93,12 @@ class SinglyLinkedList {
     if (index < 0 || index > this.length) return false
     if (index === this.length) return !!this.push(value)
     if (index === 0) return !!this.unshift(value)
-    let previousNode = this.get(index - 1)
-    let newNode = new Node(value)
-    newNode.next = previousNode.next
-    previousNode.next = newNode
+    let current = this.get(index)
+    let node = new Node(value)
+    node.prev = current.prev
+    node.next = current
+    current.prev = node
+    node.prev.next = node
     this.length++
     return true
   }
@@ -94,9 +107,13 @@ class SinglyLinkedList {
     if (index < 0 || index >= this.length) return undefined
     if (index === 0) return this.shift()
     if (index === this.length - 1) return this.pop()
-    let previousNode = this.get(index - 1)
-    let node = previousNode.next
-    previousNode.next = previousNode.next.next
+    let node = this.get(index)
+    let prevNode = node.prev
+    let nextNode = node.next
+    prevNode.next = node.next
+    nextNode.prev = node.prev
+    node.next = null
+    node.prev = null
     this.length--
     return node
   }
@@ -110,6 +127,7 @@ class SinglyLinkedList {
     for (let i = 0; i < this.length; i++) {
       next = current.next
       current.next = prev
+      current.prev = next
       prev = current
       current = next
     }
@@ -117,4 +135,4 @@ class SinglyLinkedList {
   }
 }
 
-module.exports = SinglyLinkedList
+module.exports = DoublyLinkedList
