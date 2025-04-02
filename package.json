@@ -46,7 +46,8 @@
     "singly-linked-list": "node data-structures/singly-linked-list/singly-linked-list.js",
     "doubly-linked-list": "node data-structures/doubly-linked-list/doubly-linked-list.js",
     "stack": "node data-structures/stack/stack.js",
-    "queue": "node data-structures/queue/queue.js"
+    "queue": "node data-structures/queue/queue.js",
+    "binary-search-tree": "node data-structures/trees/binary-search-tree/binary-search-tree.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
