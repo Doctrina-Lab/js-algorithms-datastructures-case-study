@@ -47,7 +47,8 @@
     "doubly-linked-list": "node data-structures/doubly-linked-list/doubly-linked-list.js",
     "stack": "node data-structures/stack/stack.js",
     "queue": "node data-structures/queue/queue.js",
-    "binary-search-tree": "node data-structures/trees/binary-search-tree/binary-search-tree.js"
+    "binary-search-tree": "node data-structures/trees/binary-search-tree/binary-search-tree.js",
+    "tree-traversal": "node data-structures/trees/tree-traversal/tree-traversal.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
