@@ -11,7 +11,7 @@ class MaxBinaryHeap {
         let temp = this.values[parentIndex]
         this.values[parentIndex] = this.values[currentIndex]
         this.values[currentIndex] = temp
-        currentIndex = Math.floor((parentIndex - 1) / 2)
+        currentIndex = parentIndex
         parentIndex = Math.floor((currentIndex - 1) / 2)
       }
     }
