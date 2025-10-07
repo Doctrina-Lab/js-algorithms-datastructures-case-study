@@ -27,41 +27,39 @@ class MaxBinaryHeap {
       this.values[this.values.length - 1] = temp
     }
 
-    const bubbleDown = () => {
-      let parentIndex = 0
+    const bubbleDown = (parentIndex) => {
       const parent = this.values[parentIndex]
       const length = this.values.length
 
-      while (true) {
-        const leftChildIndex = 2 * parentIndex + 1
-        const rightChildIndex = 2 * parentIndex + 2
-        let leftChild
-        let rightChild
-        let swapIndex = null
+      const leftChildIndex = 2 * parentIndex + 1
+      const rightChildIndex = 2 * parentIndex + 2
+      let leftChild
+      let rightChild
+      let swapIndex = null
 
-        if (leftChildIndex < length) {
-          leftChild = this.values[leftChildIndex]
-          if (parent < leftChild) {
-            swapIndex = leftChildIndex
-          }
+      if (leftChildIndex < length) {
+        leftChild = this.values[leftChildIndex]
+        if (parent < leftChild) {
+          swapIndex = leftChildIndex
         }
-
-        if (rightChildIndex < length) {
-          rightChild = this.values[rightChildIndex]
-          if (
-            (swapIndex !== null && rightChild > leftChild) 
-            || (swapIndex === null && rightChild > parent)
-          ) {
-            swapIndex = rightChildIndex
-          }
-        }
-
-        if (swapIndex === null) return
-
-        this.values[parentIndex] = this.values[swapIndex]
-        this.values[swapIndex] = parent
-        parentIndex = swapIndex
       }
+
+      if (rightChildIndex < length) {
+        rightChild = this.values[rightChildIndex]
+        if (
+          (swapIndex !== null && rightChild > leftChild) 
+          || (swapIndex === null && rightChild > parent)
+        ) {
+          swapIndex = rightChildIndex
+        }
+      }
+
+      if (swapIndex === null) return
+
+      this.values[parentIndex] = this.values[swapIndex]
+      this.values[swapIndex] = parent
+      
+      bubbleDown(swapIndex)
     }
 
     if (this.values.length === 0) { return null }
@@ -69,7 +67,7 @@ class MaxBinaryHeap {
 
     swapFirstAndLast()
     let maxValue = this.values.pop()
-    bubbleDown()
+    bubbleDown(0)
     return maxValue
   }
 }
