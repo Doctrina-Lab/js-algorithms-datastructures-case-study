@@ -49,7 +49,8 @@
     "queue": "node data-structures/queue/queue.js",
     "binary-search-tree": "node data-structures/trees/binary-search-tree/binary-search-tree.js",
     "tree-traversal": "node data-structures/trees/tree-traversal/tree-traversal.js",
-    "max-binary-heap": "node data-structures/heaps/max-binary-heap/max-binary-heap.js"
+    "max-binary-heap": "node data-structures/heaps/max-binary-heap/max-binary-heap.js",
+    "priority-queue": "node data-structures/priority-queue/priority-queue.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
