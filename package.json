@@ -51,7 +51,8 @@
     "tree-traversal": "node data-structures/trees/tree-traversal/tree-traversal.js",
     "max-binary-heap": "node data-structures/heaps/max-binary-heap/max-binary-heap.js",
     "priority-queue": "node data-structures/priority-queue/priority-queue.js",
-    "hash-table": "node data-structures/hash-table/hash-table.js"
+    "hash-table": "node data-structures/hash-table/hash-table.js",
+    "graph": "node data-structures/graph/graph.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
