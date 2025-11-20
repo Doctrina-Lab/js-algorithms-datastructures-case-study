@@ -28,6 +28,25 @@ class Graph {
       vertex => vertex !== vertex1
     )
   }
+
+  depthFirstRecursive(start) {
+    const result = []
+    const visited = {}
+
+    const dfs = (vertex) => {
+      if (!vertex) return null
+      if (!this.adjacencyList[vertex]) return null
+      visited[vertex] = true
+      result.push(vertex)
+      this.adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) { return dfs(neighbor) }
+      })
+    }
+
+    dfs(start)
+
+    return result
+  }
 }
 
 module.exports = Graph
