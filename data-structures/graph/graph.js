@@ -47,6 +47,28 @@ class Graph {
 
     return result
   }
+
+  depthFirstIterative(start) {
+    if (!start) return []
+    if (!this.adjacencyList[start]) return []
+
+    const stack = [start]
+    const result = []
+    const visited = {}
+
+    visited[start] = true
+    while (stack.length) {
+      const currentVertex = stack.pop()
+      result.push(currentVertex)
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true
+          stack.push(neighbor)
+        }
+      })
+    }
+    return result
+  }
 }
 
 module.exports = Graph
