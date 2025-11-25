@@ -69,6 +69,29 @@ class Graph {
     }
     return result
   }
+
+  breadthFirst(start) {
+    if (!start) return []
+    if (!this.adjacencyList[start]) return []
+
+    const queue = [start]
+    const result = []
+    const visited = {}
+    visited[start] = true
+
+    while (queue.length) {
+      let currentVertex = queue.shift()
+      result.push(currentVertex)
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true
+          queue.push(neighbor)
+        }
+      })
+    }
+    return result
+  }
 }
 
 module.exports = Graph

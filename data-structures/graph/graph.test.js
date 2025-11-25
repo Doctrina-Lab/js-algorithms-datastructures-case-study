@@ -335,3 +335,118 @@ describe('Graph.depthFirstIterative', () => {
     expect(graph.depthFirstIterative(undefined)).toEqual([])
   })
 })
+
+describe('Graph.breadthFirst', () => {
+  it('returns array with single vertex when graph has one vertex', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    expect(graph.breadthFirst('A')).toEqual(['A'])
+  })
+
+  it('traverses linear graph in breadth-first order', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    graph.addVertex('B')
+    graph.addVertex('C')
+    graph.addEdge('A', 'B')
+    graph.addEdge('B', 'C')
+    expect(graph.breadthFirst('A')).toEqual(['A', 'B', 'C'])
+  })
+
+  it('traverses graph with branches in breadth-first order', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    graph.addVertex('B')
+    graph.addVertex('C')
+    graph.addVertex('D')
+    graph.addEdge('A', 'B')
+    graph.addEdge('A', 'C')
+    graph.addEdge('B', 'D')
+    // Graph structure:
+    //     A
+    //    / \
+    //   B   C
+    //   |
+    //   D
+    const result = graph.breadthFirst('A')
+    expect(result).toContain('A')
+    expect(result).toContain('B')
+    expect(result).toContain('C')
+    expect(result).toContain('D')
+    expect(result.length).toEqual(4)
+    // A should be first
+    expect(result[0]).toEqual('A')
+    // B and C should come before D (breadth-first - visit all neighbors at current level)
+    expect(result.indexOf('B')).toBeLessThan(result.indexOf('D'))
+    expect(result.indexOf('C')).toBeLessThan(result.indexOf('D'))
+  })
+
+  it('traverses complex graph and visits all reachable vertices', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    graph.addVertex('B')
+    graph.addVertex('C')
+    graph.addVertex('D')
+    graph.addVertex('E')
+    graph.addVertex('F')
+    graph.addEdge('A', 'B')
+    graph.addEdge('A', 'C')
+    graph.addEdge('B', 'D')
+    graph.addEdge('C', 'E')
+    graph.addEdge('D', 'E')
+    graph.addEdge('D', 'F')
+    graph.addEdge('E', 'F')
+    //       A
+    //      / \
+    //     B   C
+    //     |   |
+    //     D - E
+    //      \ /
+    //       F
+    const result = graph.breadthFirst('A')
+    expect(result.length).toEqual(6)
+    expect(result).toContain('A')
+    expect(result).toContain('B')
+    expect(result).toContain('C')
+    expect(result).toContain('D')
+    expect(result).toContain('E')
+    expect(result).toContain('F')
+    // A should be first
+    expect(result[0]).toEqual('A')
+    // B and C should come before D and E (level 1 before level 2)
+    expect(result.indexOf('B')).toBeLessThan(result.indexOf('D'))
+    expect(result.indexOf('B')).toBeLessThan(result.indexOf('E'))
+    expect(result.indexOf('C')).toBeLessThan(result.indexOf('D'))
+    expect(result.indexOf('C')).toBeLessThan(result.indexOf('E'))
+  })
+
+  it('returns only reachable vertices in disconnected graph', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    graph.addVertex('B')
+    graph.addVertex('C')
+    graph.addVertex('D')
+    graph.addEdge('A', 'B')
+    graph.addEdge('C', 'D')
+    // Two disconnected components: A-B and C-D
+    const result = graph.breadthFirst('A')
+    expect(result).toEqual(['A', 'B'])
+    expect(result).not.toContain('C')
+    expect(result).not.toContain('D')
+  })
+
+  it('returns empty array when starting from non-existent vertex', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    graph.addVertex('B')
+    graph.addEdge('A', 'B')
+    expect(graph.breadthFirst('Z')).toEqual([])
+  })
+
+  it('handles null or undefined start vertex', () => {
+    let graph = new Graph()
+    graph.addVertex('A')
+    expect(graph.breadthFirst(null)).toEqual([])
+    expect(graph.breadthFirst(undefined)).toEqual([])
+  })
+})
