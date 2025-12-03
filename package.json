@@ -52,7 +52,8 @@
     "max-binary-heap": "node data-structures/heaps/max-binary-heap/max-binary-heap.js",
     "priority-queue": "node data-structures/priority-queue/priority-queue.js",
     "hash-table": "node data-structures/hash-table/hash-table.js",
-    "graph": "node data-structures/graph/graph.js"
+    "graph": "node data-structures/graph/graph.js",
+    "weighted-graph": "node data-structures/graph/weighted-graph.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
