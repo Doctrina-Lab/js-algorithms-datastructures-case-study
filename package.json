@@ -53,7 +53,8 @@
     "priority-queue": "node data-structures/priority-queue/priority-queue.js",
     "hash-table": "node data-structures/hash-table/hash-table.js",
     "graph": "node data-structures/graph/graph.js",
-    "weighted-graph": "node data-structures/graph/weighted-graph.js"
+    "weighted-graph": "node data-structures/graph/weighted-graph.js",
+    "dynamic-programming": "node dynamic-programming/fibonacci.js"
   },
   "author": "Vova Myroniuk",
   "license": "ISC",
